@@ -29,9 +29,10 @@ class blockchain{
 }
 
 const blch = new blockchain();
-blch.addblock({data: "b1"});
-console.log(blch);
-const res  = blockchain.isvalid(blockchain.chain);
+// blch.addblock({data: "b1"});
+console.log(blch.chain);
+const res  = blockchain.isvalid(blch.chain);
 console.log(res);
+console.log(block.gene())
 
 module.exports = blockchain;

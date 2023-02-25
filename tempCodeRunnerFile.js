@@ -1,0 +1,1 @@
+blch.addblock({data: "b1"});
