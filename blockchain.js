@@ -24,15 +24,17 @@ class blockchain{
     }
 
     static isvalid(chain){
-        
+        // console.log(chain[0]);
+        // console.log(block.gene());
         if(JSON.stringify(chain[0])!==JSON.stringify(block.gene()))return false;
 
         for(let i=1; i<chain.length; i++){
-            const {timestam, prevhash, roothash, data}=chain[i];
+            const {timestam, prevhash, data, roothash, difficulty, nonce}=chain[i];
             const realLastHash = chain[i-1].roothash;
+            //console.log(chain[i]);
 
             if(prevhash!==realLastHash)return false;
-            const validatedhash = cH(timestam, prevhash, roothash, data);
+            const validatedhash = cH(timestam, prevhash, data, difficulty, nonce);
             if(roothash!==validatedhash)return false;
         }
         return true;
@@ -41,10 +43,10 @@ class blockchain{
 }
 
 const blch = new blockchain();
-// blch.addblock({data: "b1"});
+blch.addblock({data: "b1"});
 console.log(blch.chain);
 const res  = blockchain.isvalid(blch.chain);
 console.log(res);
-console.log(block.gene())
+//console.log(block.gene())
 
 module.exports = blockchain;
