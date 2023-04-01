@@ -7,7 +7,7 @@ class blockchain{
     }
 
     addblock({data}){
-        const newblock = block.mineblock({prevBlock:this.chain[this.chain.length-1], data:"block1"});
+        const newblock = block.mineblock({prevBlock:this.chain[this.chain.length-1], data:data});
         this.chain.push(newblock);
     }
 
