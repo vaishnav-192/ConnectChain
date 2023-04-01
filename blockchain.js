@@ -43,7 +43,12 @@ class blockchain{
 }
 
 const blch = new blockchain();
-blch.addblock({data: "b1"});
+// blch.addblock({data: "b1"});
+for(let i=1; i<=5; i++){
+    let s = "block";
+    s+= '0'+i;
+    blch.addblock({data: s});
+}
 console.log(blch.chain);
 const res  = blockchain.isvalid(blch.chain);
 console.log(res);
