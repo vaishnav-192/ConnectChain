@@ -30,12 +30,16 @@ class blockchain{
 
         for(let i=1; i<chain.length; i++){
             const {timestam, prevhash, data, roothash, difficulty, nonce}=chain[i];
+
+            const lastDifficulty = chain[i-1].difficulty;
+
             const realLastHash = chain[i-1].roothash;
             //console.log(chain[i]);
 
             if(prevhash!==realLastHash)return false;
             const validatedhash = cH(timestam, prevhash, data, difficulty, nonce);
             if(roothash!==validatedhash)return false;
+            if(Math.abs(lastDifficulty-difficulty)>1)return false;
         }
         return true;
     }
