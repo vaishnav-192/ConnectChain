@@ -5,6 +5,13 @@ const PubSub = require('./publishSubscribe');
 const request = require('request');
 
 const app = express();
+// start the dir server by python -m http.server
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:8000');
+    res.header('Access-Control-Allow-Methods', 'GET');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 app.use(bodyParser.json());
 const blockchain = new blockch();
 const pubsub = new PubSub({ blockchain });
