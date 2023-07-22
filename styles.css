@@ -2,9 +2,9 @@
 body {
     margin: 5em;
     padding: 0;
-    background-image: linear-gradient(black, aqua);
+    background-color: black;
     font-family: "Monocode", monospace, Arial, sans-serif;
-    background-color: #f6f6f6;
+    /* background-color: #f6f6f6; */
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -18,17 +18,26 @@ h1 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.heading .loader {
+    z-index: 9999;
+}
+
 .container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    background: linear-gradient(#212121, #212121) padding-box,
+        linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    color: white;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 16px;
     width: 100%;
     /* Set the container to take the full width of its parent */
     box-sizing: border-box;
     /* Ensure padding and border are included in width calculation */
 }
+
 
 /* Styles for the input container */
 .input-container {
@@ -54,6 +63,7 @@ label {
 .glassy-input {
     flex: 2;
     padding: 10px;
+    color: white;
     border: none;
     outline: none;
     background: transparent;
