@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blockchain Network</title>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
-    <h1>Blockchain Network</h1>
-    <div>
+    <h1>ConnectChain</h1>
+    <div class="container">
         <label for="dataInput">Enter Data:</label>
-        <input type="text" id="dataInput" />
-        <button onclick="postData()">Post Data</button>
+        <div class="glassy-input-container">
+            <input class="glassy-input" type="text" id="dataInput" />
+            <button class="glassy-button" onclick="postData()">Post Data</button>
+        </div>
     </div>
-    <div id="messages">
+    <div id="messages" class="container">
         <!-- Broadcasted messages will be displayed here -->
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>

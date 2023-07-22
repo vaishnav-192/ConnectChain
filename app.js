@@ -28,7 +28,7 @@ async function postData() {
     try {
         const response = await fetch(url, options);
         if (!response.ok) {
-            //throw new Error('Error posting data to the blockchain network.');
+            throw new Error('Error posting data to the blockchain network.');
             console.log(`error`)
         }
         dataInput.value = '';
@@ -48,7 +48,7 @@ async function updateMessages() {
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            //throw new Error('Error fetching blockchain data.');
+            throw new Error('Error fetching blockchain data.');
             console.log(`error`)
         }
         const blockchain = await response.json();
@@ -59,7 +59,7 @@ async function updateMessages() {
         });
     } catch (error) {
         console.error(error);
-        //alert('An error occurred while fetching blockchain data.');
+        alert('An error occurred while fetching blockchain data.');
     }
 }
 
